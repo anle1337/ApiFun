@@ -1,6 +1,6 @@
 class YodaTalk < ActiveRecord::Base
 
-	API_KEY = "R57EyNxROomsheqmFu735DW5OCiup19ztSMjsnMegyPAZrhPXj"
+	API_KEY = ENV["YODA_API_KEY"]
 	BASE_URI = "https://yoda.p.mashape.com/yoda"
 
 	def yoda_translate(string)

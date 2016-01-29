@@ -3,7 +3,7 @@ class Person < ActiveRecord::Base
 	attr_accessor :id, :firstName, :fullName, :address, :city, :stateCode, :country, :workEmail, :workPhone, :state, :last_employee_added
 
 
-	API_KEY = '740cfee95ea4fcb56409db37f8a2575cc59b4759'
+	API_KEY = ENV['BAMBOO_API_KEY']
 	BASE_URI = 'https://api.bamboohr.com/api/gateway.php/mechina/v1'
 
 	

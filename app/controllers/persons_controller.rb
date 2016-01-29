@@ -5,10 +5,10 @@ layout 'with_back_button'
     @bamboo = Person.new.user_details
     @person = Person.new
 
-    @json = HTTParty.get("https://api.bamboohr.com/api/gateway.php/mechina/v1/employees/#{rand(40411..40510)}?fields=fullName1,firstName,lastNameaddress1,city,state,stateCode,country,workEmail,workPhone", {:basic_auth => {:username => '740cfee95ea4fcb56409db37f8a2575cc59b4759' }, :headers => {"Accept" => "application/json" }})
+    @json = HTTParty.get("https://api.bamboohr.com/api/gateway.php/mechina/v1/employees/#{rand(40411..40510)}?fields=fullName1,firstName,lastNameaddress1,city,state,stateCode,country,workEmail,workPhone", {:basic_auth => {:username => ENV['BAMBOO_API_KEY'] }, :headers => {"Accept" => "application/json" }})
     @json = ActiveSupport::JSON.decode(@json.body)
 
-    @last = HTTParty.get("https://api.bamboohr.com/api/gateway.php/mechina/v1/employees/#{@bamboo.last_employee_added}?fields=fullName1,firstName,lastNameaddress1,city,state,stateCode,country,workEmail,workPhone", {:basic_auth => {:username => '740cfee95ea4fcb56409db37f8a2575cc59b4759' }, :headers => {"Accept" => "application/json" }})
+    @last = HTTParty.get("https://api.bamboohr.com/api/gateway.php/mechina/v1/employees/#{@bamboo.last_employee_added}?fields=fullName1,firstName,lastNameaddress1,city,state,stateCode,country,workEmail,workPhone", {:basic_auth => {:username => ENV['BAMBOO_API_KEY'] }, :headers => {"Accept" => "application/json" }})
     @last = ActiveSupport::JSON.decode(@last.body)
     
 
@@ -42,7 +42,7 @@ builder = builder.employee { |b| b.field("#{@person.firstName}", "id" => "firstN
               }
 
 response =HTTParty.post('https://api.bamboohr.com/api/gateway.php/mechina/v1/employees', :body => "#{builder}", 
-                                             :basic_auth => {:username => "740cfee95ea4fcb56409db37f8a2575cc59b4759"},
+                                             :basic_auth => {:username => ENV['BAMBOO_API_KEY']},
                                              :headers => {"Accept" => "application/xml", "Content-Type" => "application/xml"})
 
 
