@@ -1,0 +1,3 @@
+xm.employee {
+	xm.field("Stephen", "id" => "firstName")
+}

@@ -1,0 +1,22 @@
+<div class="jumbotron center">
+	<div class="container">
+		<h1> Hello. I heard you liked APIs</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h4> Please select an API you'd like to demo: </h4>
+			<ul class="api_list">
+				<% [["Bamboo HR", persons_path], ["How Would Yoda Say It ? (Yoda sometimes takes up to 20 sec to load)", yodas_path],  ["Stripe give me free money?", new_charge_path]].each do |x| %>
+					<li> <%= link_to(x[0],x[1]) %> </li>
+				<% end %>
+			</ul>
+			<h4 style= "margin-top: 30px"> Hello! My name is An Le. This is my sample app showing a few of many APIs I've tapped into.</h4>
+			<p> Check out my github if you'd like to see the codes for this webapp. Of course, you won't be able to see my API keys lol. Have a great day.</p>
+			<p> Any questions or comments? Email me at asble@ucdavis.edu </p>
+		</div>
+	</div>
+</div>
+<!-- ["Yelp", yelps_path], -->

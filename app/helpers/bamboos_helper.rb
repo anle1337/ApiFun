@@ -1,0 +1,2 @@
+module BamboosHelper
+end

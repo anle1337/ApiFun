@@ -1,0 +1,43 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1> Stripe Api. Test it! </h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+
+
+	<%= form_tag charges_path do %>
+		  <article>
+		    <% if flash[:error].present? %>
+		      <div id="error_explanation">
+		        <p><%= flash[:error] %></p>
+		      </div>
+		    <% end %>
+
+		    <h4>This is a test stripe api! Press the pay button below to check out payment via stripe api. </h4>
+		    <h6 class="margin_top">Use Stripe's test credit card number: 4242 4242 4242 4242. </h6>
+		    <h6>You can select and expiration and 3-digit security code </h6> 
+
+		    
+		      <h3> Amount: <strong> $500 </strong></h3>
+
+		  </article>
+
+		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+		          data-description="Pay $500 Fake Dollars"
+		          data-amount= <%= 50000 %>
+		          data-locale="auto">
+          </script>
+		<% end %>
+
+		<% if flash[:success] %>
+			<h6> <strong> Thanks for paying me $500 fake dollars! </strong> </h6>
+		<% end %>
+
+		</div>
+	</div>
+</div>

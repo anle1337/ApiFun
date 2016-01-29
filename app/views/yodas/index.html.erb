@@ -1,0 +1,35 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1> Speak like Yoda you want? </h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h2> <%= @yoda %> </h2>
+		</div>
+	</div>
+
+	<div class="row margin_top">
+		<div class="col-md-6">
+			<h4> This is a Yoda API. Type a sentence below to see what yoda would say above. </h4>
+			<h5> Find the API here: <a href = "https://market.mashape.com/ismaelc/yoda-speak"> https://market.mashape.com/ismaelc/yoda-speak </a> </h5>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<%= form_for :yoda_talk, url: yodas_path do |f| %>
+
+				<%= f.label "Sentence" %><br>
+				<%= f.text_field :sentence %><br>
+
+				<%= f.submit "Submit", class: "btn"%>
+
+			<% end %>
+		</div>
+	</div>
+</div>
