@@ -34,3 +34,22 @@
 strong {
 	color: #337AB7;
 }
+
+#yelper_term, #yelper_address, #yelper_city {
+	width: 50%;
+}
+
+#yelper_limit, #yelper_sort, #yelper_state {
+	width: 25%;
+}
+
+#yelper_sort {
+	height: 25px;
+	width: 25%;
+	border: 1px solid #ccc;
+
+}
+
+.yelp_listing {
+	margin-bottom: 50px;
+}

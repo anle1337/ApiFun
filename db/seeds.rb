@@ -9,3 +9,5 @@
 Person.create(firstName: "Dale", lastName: "Chen", address: "1337 Varechao St", city: "San Francisco", workEmail: "work@work.com", workPhone: "555-555-5555")
 
 YodaTalk.create(sentence: "You are seeking my help?")
+
+Yelp.create(address: "2545 Trimble Road", city: "San Jose", state: "CA", term: "Egg Roll", limit: 2, sort: 1)

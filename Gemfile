@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+#yelp api
+gem 'yelp'
 #Integrate stripe to accept online payments
 gem 'stripe'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

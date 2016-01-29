@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   
   root "static_pages#index"  
 
-  resources :static_pages, :yodas, :yelps, :charges
+  resources :static_pages, :yodas, :charges
 
-
+  get "yelpers" => "yelps#index"
+  patch "yelpers" => "yelps#update"
 
   get "persons" => "persons#index"
   patch "persons" => "persons#update"
