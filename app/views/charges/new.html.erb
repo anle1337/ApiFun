@@ -27,7 +27,7 @@
 		  </article>
 
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		          data-key="<%= ENV['TEST_STRIPE_PUBLISHABLE_KEY'] %>"
+		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 		          data-description="Pay $500 Fake Dollars"
 		          data-amount=  50000 
 		          data-locale="auto">
