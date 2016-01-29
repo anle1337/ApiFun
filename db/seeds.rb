@@ -10,4 +10,4 @@ Person.create(firstName: "Dale", lastName: "Chen", address: "1337 Varechao St", 
 
 YodaTalk.create(sentence: "You are seeking my help?")
 
-Yelp.create(address: "2545 Trimble Road", city: "San Jose", state: "CA", term: "Egg Roll", limit: 2, sort: 1)
+Yelper.create(address: "2545 Trimble Road", city: "San Jose", state: "CA", term: "Egg Roll", limit: 2, sort: 1)
