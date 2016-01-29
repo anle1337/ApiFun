@@ -3,7 +3,7 @@ This is my sample app showcasing some of many API's that i've tapped into.
 
 *Bamboo HR
 
-*Yoda Speaks
+*Yoda Speaks - This API takes up to 20 sec sometimes to work.
 
 *Stripe
 
