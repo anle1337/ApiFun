@@ -17,9 +17,7 @@ def yelp_search
 	client = client.search("#{address}, #{city}, #{state}", {term: "#{term}", limit: limit, sort: sort})
 
 end
-def to_miles(meters)
-	meters * 0.000621371
-end
+
 
 
 end

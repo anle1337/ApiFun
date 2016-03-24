@@ -61,12 +61,12 @@
 				<div class = "yelp_listing">
 					<h3> Business Number <%= y %> </h3>
 					<h4> <strong>Shop Name: </strong> <%= x.name %> </h4>
-					<h5> <strong>Address: </strong> <%= x.location.address[0] %> </h5>
+					<h5> <strong>Address:2 </strong> <%= x.location.address[0] %> </h5>
 					<h5> <strong>City: </strong><%= x.location.city %> </h5>
 					<h5> <strong>State: </strong><%= x.location.state_code %> </h5>
 					<h5> <strong>Yelp Rating: </strong> <%= x.rating %> </h5>
 					<h5> <strong># of Yelp Reviews: </strong> <%= x.review_count %> </h5>
-					<h5> <strong>Distance: </strong> <%= '%.2f' % to_miles(x.distance) %> Miles </h5>
+					<h5> <strong>Distance: </strong> <%= to_miles(x.distance) %> Miles </h5>
 					<h5> <strong>Phone Number: </strong> <%= x.display_phone %> </h5>
 				</div>
 			<% end %>

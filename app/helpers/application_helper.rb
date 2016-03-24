@@ -1,6 +1,6 @@
 module ApplicationHelper
 
 	def to_miles(meters)
-		meters * 0.000621371
+		meters.present? ? '%.2f' % (meters * 0.000621371) : "NA"
 	end
 end

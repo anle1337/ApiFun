@@ -4,7 +4,7 @@ class YodaTalk < ActiveRecord::Base
 	BASE_URI = "https://yoda.p.mashape.com/yoda"
 
 	def yoda_translate(string)
-		response = HTTParty.get("#{BASE_URI}?sentence=#{string}", :headers => { "X-Mashape-key" => API_KEY, "Accept" => "text/plain" })
+		response = HTTParty.get("#{BASE_URI}?sentence=#{string}", :headers => { "X-Mashape-key" => API_KEY, "Accept" => "text/plain" }, :debug_output => $stdout)
 	end
 end
 
