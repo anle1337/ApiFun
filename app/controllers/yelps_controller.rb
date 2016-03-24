@@ -20,7 +20,7 @@ class YelpsController < ApplicationController
       flash[:success] = "Search parameters submitted successfully! They were #{@yelpz.inspect}"
     else 
       @errors = @yelpz.errors.full_messages
-      @yelpz = nil
+      Yelper.first.present? ? @yelpz = Yelper.first.yelp_search.businesses : @yelpz = nil 
       render :index
     end
   end
