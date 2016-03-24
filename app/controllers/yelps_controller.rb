@@ -2,8 +2,8 @@ class YelpsController < ApplicationController
 	layout 'with_back_button'
 
   def index
-  	@yelpz = Yelper.first
-    @yelpz = @yelpz.yelp_search.businesses
+  	@yelpz = Yelper.first 
+    @yelpz = @yelpz.yelp_search.businesses if @yelpz.present?
   end
 
   def create
@@ -13,7 +13,7 @@ class YelpsController < ApplicationController
   end
 
   def update
-    @yelpz = Yelper.first
+    @yelpz = Yelper.first || Yelper.new
 
     if @yelpz.update(yelper_params)
       redirect_to "/yelpers"
