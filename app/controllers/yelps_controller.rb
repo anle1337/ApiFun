@@ -18,6 +18,10 @@ class YelpsController < ApplicationController
     if @yelpz.update(yelper_params)
       redirect_to "/yelpers"
       flash[:success] = "Search parameters submitted successfully! They were #{@yelpz.inspect}"
+    else 
+      @errors = @yelpz.errors.full_messages
+      @yelpz = nil
+      render :index
     end
   end
 

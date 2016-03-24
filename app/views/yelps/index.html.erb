@@ -25,6 +25,16 @@
 <div class="container">
 	<div class="row margin_top">
 		<div class="col-md-6">
+		<% if @errors.present? %>
+			<div class = "error_explanation">
+				<div class="alert alert-danger">
+				<% @errors.each do |x| %>
+					<p> <%= x %></p>
+				<% end %>
+				</div>
+			</div>
+		<% end %>
+
 			<%= form_for :yelper, url: yelpers_path, method: :patch do |f| %>
 
 				<%= f.label :term, "Search Term" %> <br>
@@ -40,7 +50,7 @@
 				<%= f.text_field :state, placeholder: "CA - 2 letters" %> <br>
 
 				<%= f.label :limit, "Limit # of Result To:" %> <br>
-				<%= f.number_field :limit, placeholder: "1-25" %> <br> <br>
+				<%= f.number_field :limit, placeholder: "1-20" %> <br> <br>
 
 				<%= f.label "Sort By" %> <br>
 				<%= f.select(:sort, [["Best Match", "0"],["Distance", "1"], ["Rating", "2"]], {}) %> <br> <br>
